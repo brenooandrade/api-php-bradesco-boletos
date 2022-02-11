@@ -49,7 +49,9 @@ CERT_PASS=123456 -> "Senha do certificado digital (A1) da empresa titular"
 ### 5. Request - Cobrança
 ⚡ Para realizar a solicitação de cobrança é preciso utilizar os seguintes parâmetros:
 **Método:** POST
+
 **URI:** http://127.0.0.1/api/reqBradesco.php/?ENVIRONMENT=HOMOLOG
+
 **Payload:**
 ```sh
    {
