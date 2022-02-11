@@ -26,7 +26,7 @@ sudo systemctl restart apache2
 ```
 
 ### 2. Configuração de certificado digital / senha do certificado da empresa titular
-⚠️ Como explicado, é premissa que o payload request (JSON) seja assinado em PKCS#7 com o certificado digital (A1) da empresa titular, portanto será necessário copia-lo para o dirtório ./config/certificado.pfx no exemplo em questão utilizei um certificado fake que é inválido, **substitua pelo certificado digital da empresa titular**
+⚠️ Como explicado, é premissa que o payload request (JSON) seja assinado em PKCS#7 com o certificado digital (A1) da empresa titular, portanto será necessário copia-lo para o dirtório ./config/certificado.pfx no exemplo em questão utilizei um certificado fake que é inválido, **substitua pelo certificado digital da empresa titular**.
 
 ### 3. Configuração de parâmetros para funcionamento correto da API para
 🛑 No arquivo ./config/.env estão os parâmetros necessários para funcionamento da API, configure de acordo com o seu cenário:
@@ -40,7 +40,7 @@ CERT_PASS=123456 -> "Senha do certificado digital (A1) da empresa titular"
 ```
 
 ### 4. Authorization
-🔑 A API possui autenticação básica e para isso ao enviar a requisição do registro da cobrança é preciso enviar um Header na requisição contendo as credenciais, como em qualquer outra autenticação básica, será preciso conversar as credenciais da seguinte forma: Authorization Basic empresa:S3nh4S3cre3T4 (criptografida em base64)
+🔑 A API possui autenticação básica e para isso ao enviar a requisição do registro da cobrança é preciso enviar um Header na requisição contendo as credenciais, como em qualquer outra autenticação básica, será preciso converter as credenciais da seguinte forma: Authorization Basic empresa:S3nh4S3cre3T4 (criptografida em base64)
 |Header Name|Header Value|
 |-------------|------------|
 |Authorization|Basic ZW1wcmVzYTpTM25oNFMzY3JlM1Q0|
