@@ -26,7 +26,7 @@ sudo systemctl restart apache2
 ```
 
 ### 2. Configuração de certificado digital / senha do certificado da empresa titular
-⚠️ Como explicado, é premissa que o payload request (JSON) seja assinado em PKCS#7 com o certificado digital (A1) da empresa titular, portanto será necessário copia-lo para o dirtório ./config/certificado.pfx no exemplo em questão utilizei um certificado fake que é inválido,**substitua pelo certificado digital da empresa titular**
+⚠️ Como explicado, é premissa que o payload request (JSON) seja assinado em PKCS#7 com o certificado digital (A1) da empresa titular, portanto será necessário copia-lo para o dirtório ./config/certificado.pfx no exemplo em questão utilizei um certificado fake que é inválido, **substitua pelo certificado digital da empresa titular**
 
 ### 3. Configuração de parâmetros para funcionamento correto da API para
 🛑 No arquivo ./config/.env estão os parâmetros necessários para funcionamento da API, configure de acordo com o seu cenário:
