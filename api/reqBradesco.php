@@ -11,7 +11,7 @@
     try {  
 
         //Configurações de ambiente
-        $dotEnv = new DotEnv(__DIR__ . '\..\config\.env');
+        $dotEnv = new DotEnv(dirname(__DIR__ . '1') . '/config/.env');
         $dotEnv->load();
 
         //Basic Authorization
