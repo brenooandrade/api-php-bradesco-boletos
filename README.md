@@ -35,7 +35,7 @@ AUTH_USER=empresa -> "Usuário para Basic Authorization da API"
 AUTH_PW=S3nh4S3cre3T4 -> "Senha para Basic Authorization da API"
 WSDL_PROD=https://cobranca.bradesconetempresa.b.br/ibpjregistrotitulows/registrotitulo -> "URI produção Bradesco"
 WSDL_HOMOL=https://cobranca.bradesconetempresa.b.br/ibpjregistrotitulows/registrotitulohomologacao -> "URI homologação Bradesco"
-CERT_PATH=../config/certificado_fake.pfx -> "Path do certificado digital (A1) da empresa titular"
+CERT_PATH=/config/certificado_fake.pfx -> "Path do certificado digital (A1) da empresa titular"
 CERT_PASS=123456 -> "Senha do certificado digital (A1) da empresa titular"
 ```
 
