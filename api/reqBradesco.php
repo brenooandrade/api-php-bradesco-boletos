@@ -11,7 +11,7 @@
     try {  
 
         //Configurações de ambiente
-        $dotEnv = new DotEnv(dirname(__DIR__ . '1') . '/config/.env');
+        $dotEnv = new DotEnv(dirname(__DIR__ . '1') . '/config/.env') ;
         $dotEnv->load();
 
         //Basic Authorization
@@ -37,7 +37,7 @@
         //Classe - WebService Bradesco
         $wbsBradesco = new WebServiceBradesco($payloadJson);
         $environment == 'PRODUCTION' ? $wbsBradesco->set_wsdl(getenv('WSDL_PROD')) : $wbsBradesco->set_wsdl(getenv('WSDL_HOMOL'));
-        $wbsBradesco->set_certPfx(getenv('CERT_PATH'));
+        $wbsBradesco->set_certPfx(dirname(__DIR__ . '1') . getenv('CERT_PATH'));
         $wbsBradesco->set_certPass(getenv('CERT_PASS'));
         $respBradesco = $wbsBradesco->requestAPIBradesco(); 
 
