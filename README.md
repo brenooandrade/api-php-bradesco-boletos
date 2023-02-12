@@ -1,5 +1,5 @@
 # PHP API - Bradesco boleto online
-![Badge](https://img.shields.io/badge/PHP-API+Bradesco%339933?style=for-the-badge&logo=ghost)
+![Badge](https://img.shields.io/badge/PHP-API+Bradesco%339933?style=for-the-badge&logo=ghost) - Se o projeto foi útil pra você, por favor, deixe uma estrela no repositório. ;-)
 --------------
 Simples API escrita em PHP para registro de cobranças (boletos) utilizando o webservice online do Bradesco.
 
@@ -29,7 +29,7 @@ sudo systemctl restart apache2
 Copie o conteúdo da API que está dentro de src/ para o diretório /var/www/html/ 
 
 #### 1.2 Instalação via Docker
-Você também pode optar por subir a API via Docker, disponilizei um arquivo Dockerfile para que a imagem possa ser criada, lembre-se que é importante antes de realizar o build  não se esquece de ler e seguir atentamento os passos 2 e 3 disponíveis abaixo.
+🐋 Você também pode optar por subir a API via Docker, disponilizei um arquivo Dockerfile para que a imagem possa ser criada, lembre-se que é importante antes de realizar o build  não se esquece de ler e seguir atentamento os passos 2 e 3 disponíveis abaixo.
 ```sh
 docker build -t api-php-bradesco-boletos .
 docker run -p 80:80 api-php-bradesco-boletos
