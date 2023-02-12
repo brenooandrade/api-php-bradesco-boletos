@@ -1,8 +1,8 @@
 # PHP API - Bradesco boleto online
 ![Badge](https://img.shields.io/badge/PHP-API+Bradesco%339933?style=for-the-badge&logo=ghost) 
-Deixe uma estrela no repositório se o projeto foi útil pra você.
 --------------
-Simples API escrita em PHP para registro de cobranças (boletos) utilizando o webservice online do Bradesco.
+⚙️ Simples API escrita em PHP para registro de cobranças (boletos) utilizando o webservice online do Bradesco.
+⭐ **Deixe uma estrela no repositório se esse projeto foi útil pra você.**
 
 ## Informações:
 O WebService do Bradesco requer que o payload (JSON) enviado esteja assinado através do certificado digital da empresa titular da cobrança, utilizando o padrão PKCS#7 para assinatura do arquivo .JSON.
@@ -30,14 +30,15 @@ sudo systemctl restart apache2
 Copie o conteúdo da API que está dentro de src/ para o diretório /var/www/html/ 
 
 #### 1.2 Instalação via Docker
-🐋 Você também pode optar por subir a API via Docker, disponilizei um arquivo Dockerfile para que a imagem possa ser criada, antes de realizar o build não se esqueça de ler e seguir atentamente os passos 2 e 3 disponíveis abaixo.
+🐋 Você também pode optar por subir a API via Docker, disponilizei um arquivo Dockerfile para que a imagem possa ser criada, antes de realizar o build **não se esqueça de ler e seguir atentamente os passos 2 e 3 disponíveis abaixo.**
+Utilize os seguintes comandos para criar a imagem docker e subir o container na porta 80 de seu ambiente.
 ```sh
 docker build -t api-php-bradesco-boletos .
 docker run -p 80:80 api-php-bradesco-boletos
 ```
 
 ### 2. Configuração de certificado digital / senha do certificado da empresa titular
-⚠️ Como explicado, é premissa que o payload request (JSON) seja assinado em PKCS#7 com o certificado digital (A1) da empresa titular, portanto será necessário copia-lo para o dirtório ./config/certificado.pfx no exemplo em questão utilizei um certificado fake que é inválido, **substitua pelo certificado digital da empresa titular**.
+⚠️ Como explicado no manual técnico é premissa que o payload request (JSON) seja assinado em PKCS#7 com o certificado digital (A1) da empresa titular, portanto será necessário copia-lo para o diretório ./config/seu_certificadoA1.pfx (no exemplo em questão utilizei um certificado fake que é inválido) -- **Substitua pelo certificado digital da empresa titular**.
 
 ### 3. Configuração de parâmetros para funcionamento correto da API para
 🛑 No arquivo ./config/.env estão os parâmetros necessários para funcionamento da API, configure de acordo com o seu cenário:
