@@ -29,7 +29,7 @@ sudo systemctl restart apache2
 Copie o conteúdo da API que está dentro de src/ para o diretório /var/www/html/ 
 
 #### 1.1 Instalação via Docker
-Você também pode optar por subir a API via Docker, disponilizei um arquivo Dockerfile para que a imagem possa ser criada, lembre-se que é importante antes de realizar o build [colocar o arquivo do certificado]([here](### 2. Configuração de certificado digital / senha do certificado da empresa titular)) e [configurar as variáveis de ambiente corretamente]([here](### 3. Configuração de parâmetros para funcionamento correto da API para))
+Você também pode optar por subir a API via Docker, disponilizei um arquivo Dockerfile para que a imagem possa ser criada, lembre-se que é importante antes de realizar o build  não se esquece de ler e seguir atentamento os passos 2 e 3 disponíveis abaixo.
 ```sh
 docker build -t api-php-bradesco-boletos .
 docker run -p 80:80 api-php-bradesco-boletos
