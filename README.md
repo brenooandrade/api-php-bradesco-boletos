@@ -1,5 +1,6 @@
 # PHP API - Bradesco boleto online
-![Badge](https://img.shields.io/badge/PHP-API+Bradesco%339933?style=for-the-badge&logo=ghost) - Se o projeto foi útil pra você, por favor, deixe uma estrela no repositório. ;-)
+![Badge](https://img.shields.io/badge/PHP-API+Bradesco%339933?style=for-the-badge&logo=ghost) 
+Deixe uma estrela no repositório se o projeto foi útil pra você.
 --------------
 Simples API escrita em PHP para registro de cobranças (boletos) utilizando o webservice online do Bradesco.
 
@@ -139,3 +140,4 @@ CERT_PASS=123456 -> "Senha do certificado digital (A1) da empresa titular"
 
 ## Referências / Tecnologias:
 - [PHP](https://www.php.net/)
+- [OpenSSL](https://www.openssl.org/)
