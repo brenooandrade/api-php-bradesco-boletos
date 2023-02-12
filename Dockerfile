@@ -18,6 +18,10 @@ RUN apt-get update && apt-get install -y \
 # Copy the PHP code into the container
 COPY src/ /var/www/html/
 
+# Add the desired permissions
+RUN chown -R www-data:www-data /var/www/html
+RUN chmod -R 755 /var/www/html
+
 # Configure Apache to use PHP
 RUN a2enmod php7.4
 

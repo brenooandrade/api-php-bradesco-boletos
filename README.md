@@ -13,7 +13,15 @@ Essa API tem como objetivo receber o payload conforme padrão da documentação 
 ## Como usar:
 
 ### 1. Instalação / Setup
-#### 1.1 Instalação de apache/PHP e módulos via Ubuntu 20.04
+
+#### 1.1 Instalação via Docker
+🐋 Você pode optar por subir a API via Docker, disponilizei um arquivo Dockerfile para que a imagem possa ser criada, antes de realizar o build **não se esqueça de ler e seguir atentamente os passos 2 e 3 disponíveis abaixo.**
+Utilize os seguintes comandos para criar a imagem docker e subir o container na porta 80 de seu ambiente.
+```sh
+docker build -t api-php-bradesco-boletos .
+docker run -p 80:80 api-php-bradesco-boletos
+```
+#### 1.2 Instalação de apache/PHP e módulos via Ubuntu 20.04
 🐧 O projeto em questão foi homologado utilizando o Ubuntu versão 20.04 + Apache 2.4 + PHP 7.4, portanto se você deseja rodar a API direto de uma instalação Ubuntu, será preciso realizar a instalação dos pacotes necessários:
 ```sh
 sudo apt-get update
@@ -29,14 +37,11 @@ sudo systemctl restart apache2
 ```
 Copie o conteúdo da API que está dentro de src/ para o diretório /var/www/html/ 
 
-#### 1.2 Instalação via Docker
-🐋 Você também pode optar por subir a API via Docker, disponilizei um arquivo Dockerfile para que a imagem possa ser criada, antes de realizar o build **não se esqueça de ler e seguir atentamente os passos 2 e 3 disponíveis abaixo.**
-Utilize os seguintes comandos para criar a imagem docker e subir o container na porta 80 de seu ambiente.
+🐧**Conceda as permissões de leitura, escrita e alteração para o serviço do apache. A API (apache) irá precisar assinar os payloads e essa assinatura gera novos arquivos na raiz /var/www/html/**
 ```sh
-docker build -t api-php-bradesco-boletos .
-docker run -p 80:80 api-php-bradesco-boletos
+sudo chown -R www-data:www-data /var/www/html
+sudo chmod -R 755 /var/www/html
 ```
-
 ### 2. Configuração de certificado digital / senha do certificado da empresa titular
 ⚠️ Como explicado no manual técnico é premissa que o payload request (JSON) seja assinado em PKCS#7 com o certificado digital (A1) da empresa titular, portanto será necessário copia-lo para o diretório ./config/seu_certificadoA1.pfx (no exemplo em questão utilizei um certificado fake que é inválido) -- **Substitua pelo certificado digital da empresa titular**.
 
