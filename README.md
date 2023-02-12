@@ -10,8 +10,10 @@ O WebService do Bradesco requer que o payload (JSON) enviado esteja assinado atr
 Essa API tem como objetivo receber o payload conforme padrão da documentação (**Manual_Técnico_Layout_Registro_OnLine.pdf**), realizar a assinatura junto ao certificado digital da conta titular no padrão pkcs#7 e requisitar o registro da cobrança (boleto) no webservice online do Bradesco, retornando ao cliente a resposta do banco.
 
 ## Como usar:
-### 1. Instalação de apache/PHP e módulos no Ubuntu 20.04
-🐧 O projeto em questão foi homologado utilizando o Ubuntu versão 20.04 + Apache 2.4 + PHP 7.4, portanto será preciso realizar a instalação dos pacotes necessários:
+
+### 1. Instalação / Setup
+#### 1.1 Instalação de apache/PHP e módulos via Ubuntu 20.04
+🐧 O projeto em questão foi homologado utilizando o Ubuntu versão 20.04 + Apache 2.4 + PHP 7.4, portanto se você deseja rodar a API direto de uma instalação Ubuntu, será preciso realizar a instalação dos pacotes necessários:
 ```sh
 sudo apt-get update
 sudo apt-get install apache2
@@ -23,6 +25,13 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt-get install php7.4-curl
 sudo apt-get install php7.4-xml
 sudo systemctl restart apache2
+```
+
+#### 1.1 Instalação via Docker
+Você também pode optar por subir a API via Docker, disponilizei um arquivo Dockerfile para que a imagem possa ser criada, lembre-se que é importante antes de realizar o build [colocar o arquivo do certificado]([here](#place-2)) e [configurar as variáveis de ambiente corretamente]([here](#place-3))
+```sh
+docker build -t api-php-bradesco-boletos .
+docker run -p 80:80 api-php-bradesco-boletos
 ```
 
 ### 2. Configuração de certificado digital / senha do certificado da empresa titular
@@ -46,7 +55,7 @@ CERT_PASS=123456 -> "Senha do certificado digital (A1) da empresa titular"
 |Authorization|Basic ZW1wcmVzYTpTM25oNFMzY3JlM1Q0|
 |Content-Type|application/json|
 
-### 5. Request - Cobrança
+### 6. Request - Cobrança
 ⚡ Para realizar a solicitação de cobrança é preciso utilizar os seguintes parâmetros:
 
 **Método:** POST
